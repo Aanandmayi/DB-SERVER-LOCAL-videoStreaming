@@ -18,12 +18,14 @@ const getVideoListInServer = require("./routes/getVideoListInServer")
 const streamLocalVideo = require("./routes/streamLocalVideo")
 const uploadToMongoDB = require("./routes/uploadToMongoDB")
 const getDBVideoStream = require("./routes/getDBVideoStream")
+const databaseFileName = require("./routes/databaseFileName")
 
 //calling the routes files
 app.use("/getVideoListInServer", getVideoListInServer)
 app.use("/streamLocalVideo", streamLocalVideo)
 app.use("/upload", uploadToMongoDB)
 app.use("/getDBVideoStream", getDBVideoStream)
+app.use("/databaseFileName", databaseFileName)
 
 app.listen(config.port, () => {
     console.log("listening on port 3000");

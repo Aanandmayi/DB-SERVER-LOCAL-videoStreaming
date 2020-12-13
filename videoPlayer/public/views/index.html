@@ -26,10 +26,7 @@
   <body>
     <div>
       <video id="videoPlayer" width="650" controls>
-        <source
-          src="http://localhost:3000/getDBVideoStream/?filename=55352c960c13b0606ed4c629be0a3b14.mp4"
-          accept="video/mp4,video/x-matroska"
-        />
+        <source src="" accept="video/mp4,video/x-matroska" />
       </video>
       <div>
         <input type="file" name="videoFile" class="localVideoFile" />
@@ -45,6 +42,9 @@
       </div>
       <input type="submit" value="Submit" class="btn btn-primary btn-block" />
     </form>
+    <button onclick="getListFromDatabase()">GET DATABASE LIST</button>
+    <div class="databaseVideoList"></div>
+    <div class="databaseVideo"></div>
     <script src="..\js\localVideo.js"></script>
     <script src="..\js\transitionScript.js"></script>
     <script src="../js/displayFSList.js"></script>

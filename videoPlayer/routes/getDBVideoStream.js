@@ -21,12 +21,12 @@ conn.once('open', () => {
 // @route GET /image/:filename
 // @desc Display Image
 Router.get('/', (req, res) => {
-    gfs.files.findOne({ filename: req.query.filename }, (err, file) => {
+    gfs.files.findOne({ filename: req.query.search }, (err, file) => {
         // Check if file
         if (err) {
             throw err;
         }
-
+        console.log(gfs.files);
         if (!file || file.length === 0) {
             return res.status(404).json({
                 err: 'No file exists'
