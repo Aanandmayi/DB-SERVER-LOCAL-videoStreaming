@@ -1,0 +1,52 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Document</title>
+    <script
+      src="https://code.jquery.com/jquery-3.1.1.min.js"
+      integrity="sha256-hVVnYaiADRTO2PzUGmuLJr8BLUSjGIZsDYGmIJLv2b8="
+      crossorigin="anonymous"
+    ></script>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/semantic-ui/2.4.1/semantic.min.js"></script>
+    <link
+      rel="stylesheet"
+      href="https://cdnjs.cloudflare.com/ajax/libs/semantic-ui/2.4.1/semantic.min.css"
+    />
+    <script src="http://ajax.googleapis.com/ajax/libs/jquery/1.9.1/jquery.min.js"></script>
+    <link
+      rel="stylesheet"
+      href="https://maxcdn.bootstrapcdn.com/bootstrap/4.0.0/css/bootstrap.min.css"
+      integrity="sha384-Gn5384xqQ1aoWXA+058RXPxPg6fy4IWvTNh0E263XmFcJlSAwiGgFAW/dAiS6JXm"
+      crossorigin="anonymous"
+    />
+  </head>
+
+  <body>
+    <div>
+      <video id="videoPlayer" width="650" controls>
+        <source
+          src="http://localhost:3000/getDBVideoStream/?filename=55352c960c13b0606ed4c629be0a3b14.mp4"
+          accept="video/mp4,video/x-matroska"
+        />
+      </video>
+      <div>
+        <input type="file" name="videoFile" class="localVideoFile" />
+      </div>
+      <button onclick="getFileList()">Play Server Video</button>
+      <div class="serverVideoList"></div>
+    </div>
+    <div class="serverVideo"></div>
+    <form action="/upload" method="POST" enctype="multipart/form-data">
+      <div class="custom-file mb-3">
+        <input type="file" name="file" id="file" class="custom-file-input" />
+        <label for="file" class="custom-file-label">Choose File</label>
+      </div>
+      <input type="submit" value="Submit" class="btn btn-primary btn-block" />
+    </form>
+    <script src="..\js\localVideo.js"></script>
+    <script src="..\js\transitionScript.js"></script>
+    <script src="../js/displayFSList.js"></script>
+  </body>
+</html>
