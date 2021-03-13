@@ -6,4 +6,3 @@
     
 2. Save any local video file of an size into a mongodb database
     and play it from the database itself.
-  
